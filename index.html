@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abhipsa's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+    body { 
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-600 antialiased">
+
+<!-- Header -->
+<header class="sticky top-0 z-40 backdrop-blur border-b border-gray-200" style="background-color: black;" >
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between" style="color: white;">
+    <a href="#" class="font-semibold text-lg">AS<span class="text-blue-900">.</span></a>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#about" class="hover:text-blue-300">About</a>
+      <a href="#skills" class="hover:text-blue-600">Skills</a>
+      <a href="#projects" class="hover:text-blue-600">Projects</a>
+      <a href="#experience" class="hover:text-blue-600">Experience</a>
+      <a href="#contact" class="hover:text-blue-600">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="py-20" style="background-color: rgb(58, 59, 59);">
+  <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="text-sm uppercase tracking-widest font-semibold" style="color:rgb(187, 224, 241)">AI/ML Developer</p>
+      <h1 class="mt-3 text-5xl font-extrabold leading-tight" style="color:azure">Hi &#128075, I'm <span style="color:aliceblue">Abhipsa Srivastava</span></h1>
+      <p class="mt-6 text-gray-20"style="color:rgb(187, 224, 241);">I am an aspiring AIML Engineer. I love to learn and build.</p>
+      <div class="mt-8 flex gap-4">
+        <a href="#projects" class="px-5 py-3 rounded-2xl bg-gray-100 text-blue-900 hover:bg-blue-400 font-medium">View Projects</a>
+        <a href="#contact" class="px-5 py-3 rounded-2xl border border-blue-500 hover:border-white hover:text-blue-400 font-medium" style="color:rgb(187, 224, 241);">Contact Me</a>
+      </div>
+    </div>
+    <div class="flex justify-center md:justify-end">
+      <img src="statics/profile.png" alt="Profile" class="w-90 h-60 rounded-2xl shadow-lg object-cover"/>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20 bg-gray-50 border-t border-gray-200" style="background-color: rgb(58,59,59); color: white;">
+  <div class="container mx-auto px-4" >
+    <h2 class="text-3xl font-bold"  style="color:rgb(187, 224, 241)">About Me &#128105</h2>
+    <p class="mt-4 text-white-700 max-w-2xl">I am a passionate AI/ML developer with a keen interest in building intelligent systems. I enjoy solving complex problems and continuously learning new technologies.</p>
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-xl font-semibold">Education</h3>
+        <p class="mt-2 text-white">B.Tech in Computer Science with speacilisation in Artificial Intelligence and Machine Learning,<br> Dr. APJ Abdul Kalam Technical University</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold">For Fun</h3>
+        <p class="mt-2 text-white">Exploring new technologies, open source contributions, outdoor adventures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-20 bg-gray-50 border-t border-gray-200" style="background-color: rgb(58, 59, 59);">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold"  style="color:rgb(187, 224, 241)">Skills</h2>
+    <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="p-5 rounded-xl border bg-white shadow hover:shadow-md transition">
+        <h3 class="font-semibold">Programming & Databases</h3>
+        <p class="text-sm text-gray-600 mt-2">Python, C++, MySQL, MongoDB</p>
+      </div>
+      <div class="p-5 rounded-xl border bg-white shadow hover:shadow-md transition">
+        <h3 class="font-semibold">Machine Learning & AI</h3>
+        <p class="text-sm text-gray-600 mt-2">TensorFlow, Keras, PyTorch, Scikit-learn, Pandas, NumPy</p>
+      </div>
+      <div class="p-5 rounded-xl border bg-white shadow hover:shadow-md transition">
+        <h3 class="font-semibold">Platforms/Tools</h3>
+        <p class="text-sm text-gray-600 mt-2">Git, Github, GCP, Streamlit</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-20 border-t border-gray-200" style="background-color: rgb(58, 59, 59);">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold" style="color:rgb(187, 224, 241)">Projects</h2>
+    <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      <article class="p-5 rounded-2xl border bg-white hover:shadow-md transition">
+        <img src="statics/ml-dashboard.webp" alt="ML Dashboard" class="rounded-lg mb-3"/>
+        <h3 class="font-semibold">MovieMesh</h3>
+        <p class="text-sm text-gray-600 mt-2">Movie Recommendation System</p>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a href="#" class="text-indigo-600 hover:underline">Code</a>
+        </div>
+      </article>
+      
+       <article class="p-5 rounded-2xl border bg-white hover:shadow-md transition">
+        <img src="statics/ml-dashboard.webp" alt="ML Dashboard" class="rounded-lg mb-3"/>
+        <h3 class="font-semibold">Clearify</h3>
+        <p class="text-sm text-gray-600 mt-2">An image processing system, uses GAN architecture for dehazing the images.</p>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a href="#" class="text-indigo-600 hover:underline">Code</a>
+        </div>
+      </article>
+
+      <article class="p-5 rounded-2xl border bg-white hover:shadow-md transition">
+        <img src="statics/ml-dashboard.webp" alt="ML Dashboard" class="rounded-lg mb-3"/>
+        <h3 class="font-semibold">Flight Customer Satisfaction System</h3>
+        <p class="text-sm text-gray-600 mt-2">A customer satisfaction system, uses random forest to understand the relationship between features.</p>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a href="https://github.com/abhipsa14/flight_customer_prediction" class="text-indigo-600 hover:underline">Code</a>
+        </div>
+      </article>
+
+      <article class="p-5 rounded-2xl border bg-white hover:shadow-md transition">
+        <img src="statics/ml-dashboard.webp" alt="ML Dashboard" class="rounded-lg mb-3"/>
+        <h3 class="font-semibold">AgriPrediction</h3>
+        <p class="text-sm text-gray-600 mt-2">Crop Predictions, using KMeans clustering algorithm, solving problem faced by farmers to which crop to grow in a season.</p>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a href="#" class="text-indigo-600 hover:underline">Code</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Experience -->
+<section id="experience" class="py-20 bg-gray-50 border-t border-gray-200"  style="background-color: rgb(58, 59, 59);">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold"  style="color:rgb(187, 224, 241)">Experience</h2>
+    <div class="mt-8 space-y-6">
+      <div class="p-5 rounded-xl border bg-white shadow">
+        <h3 class="font-semibold">AI Intern @ ZenithIndia</h3>
+        <p class="text-sm text-gray-600">July 2025 – Present</p>
+        <p class="mt-2 text-gray-700 text-sm">Building NLP models, working on trend forecasting and predictions, with model accuracy 40%</p>
+      </div>
+    </div>
+     <div class="mt-8 space-y-6">
+      <div class="p-5 rounded-xl border bg-white shadow">
+        <h3 class="font-semibold">Research Intern @ Indian Institute of Information Technology, Allahabad</h3>
+        <p class="text-sm text-gray-600">Dec 2024 - Jan 2025</p>
+        <p class="mt-2 text-gray-700 text-sm">Build a DeepSlice model used in 5G network slicing, with good accuracy. Worked under the guidance of Prof. O.P Vyas, achieved a excellent awardsheet.</p>
+      </div>
+    </div>
+     <div class="mt-8 space-y-6">
+      <div class="p-5 rounded-xl border bg-white shadow">
+        <h3 class="font-semibold">Intership Trainee @ Upflairs Pvt. Ltd., Jaipur</h3>
+        <p class="text-sm text-gray-600">Jan 2023 – Apr 2023</p>
+        <p class="mt-2 text-gray-700 text-sm">Built NLP models for customer feedback analysis, improving accuracy by 15%.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 border-t border-gray-200 bg-white"  style="background-color: rgb(58, 59, 59); color:white;">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-3xl font-bold"  style="color:rgb(187, 224, 241)">Contact &#128228</h2>
+    <p class="mt-3 text-white-700" >Have a question or a project in mind? Drop me a message!</p>
+    <form 
+      class="mt-8 grid gap-4" 
+      action="https://formspree.io/f/yourFormID" 
+      method="POST"
+    >
+      <div>
+        <label for="name" class="block text-sm mb-1">Your Name</label>
+        <input id="name" name="name" type="text" placeholder="Your Name" 
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none"
+          required>
+      </div>
+      <div>
+        <label for="email" class="block text-sm mb-1">Your Email</label>
+        <input id="email" name="email" type="email" placeholder="Your Email" 
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-600 focus:outline-none"
+          required>
+      </div>
+      <div>
+        <label for="message" class="block text-sm mb-1">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Message" 
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-800 focus:outline-none"
+          required></textarea>
+      </div>
+      <button 
+        type="submit" 
+        class="px-5 py-3 rounded-2xl bg-blue-200 text-blue-900 hover:bg-blue-400 font-medium"
+      >Send</button>
+    </form>
+    <p class="mt-4 text-xs text-white-500">
+      Or email me directly at <a href="mailto:abhipsasri8183@gmail.com" class="text-blue-400 hover:underline">abhipsasri8183@gmail.com</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="py-10 border-t border-gray-200 bg-white"  style="background-color: rgb(58, 59, 59); ">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between text-sm text-gray-800" style="color:white;">
+    <p>© <span id="year"></span> Abhipsa Srivastava</p>
+    <div class="flex gap-4">
+      <a href="https://www.github.com/abhipsa14" class="hover:text-blue-400">GitHub</a>
+      <a href="#" class="hover:text-blue-400">LinkedIn</a>
+      <a href="#" class="hover:text-blue-400">Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
