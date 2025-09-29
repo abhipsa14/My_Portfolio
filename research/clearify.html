@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <title>Clearify</title>
+    <style>
+        /* Simple color scheme */
+        :root {
+            --primary: #000000;
+            --secondary: #000000;
+            --accent: #1e1e1f;
+            --light: #0a0a0a;
+            --dark: #ffffff;
+        }
+        
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color:rgba(255, 255, 255, 0.877);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .post-meta {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        /* Content */
+        .blog-content {
+            margin-bottom: 3rem;
+        }
+        
+        .blog-content h2 {
+            color: var(--primary);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .blog-content p {
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+        
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--secondary);
+            font-style: italic;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ffffff;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--dark);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <h1>Clearify-My first Hackathon Research paper</h1>
+    <div class="post-meta">5 min read</div>
+   </header>
+   
+   <main>
+        <article class="blog-content">
+            <p>Hi! I'm excited to share my first hackathon research paper with you, which focuses on the innovative project "Clearify".</p>
+            
+            <h2>Why Clearify?</h2>
+            <p>Clearify aims to remove the haze from the image and make it clear or close to clear.
+            <br>In today's data-driven world, making sense of complex information is crucial, and Clearify seeks to address this challenge head-on.</p>
+         <div style="display: inline-flex; padding:2em;">
+            <img src="../images/res/clearify.png" alt="AI Blog" style="width:40;max-width:300px;margin:1rem 0;border-radius:8px;">
+            <blockquote>
+                <a href="https://arxiv.org/abs/1810.09479">Read the Paper</a>
+                <p>This paper presents a novel approach to single image haze removal using a generative adversarial network (GAN).</p>
+            </blockquote>
+         </div>  
+            
+            
+            <a href=""><h2>Single Image Haze Removal using a Generative Adversarial Network</h2></a>
+
+
+            <p>The paper uses conditional GANs(cGANs), where cGANs uses the U-Net architecture, this paper propose to to replace it with 56-Layer Tiramisu model. Use of Patch Discriminator to reduce artefacts.</p>
+            <p>Weighted loss function is designed ti include the effect of L1 loss and Perceptual loss in addition to the standard conditional GAN generator loss to make model generate visually appealing outputs.</p>
+            
+            <h2>What to Expect</h2>
+            <p>This blog will serve as a learning journal where I document my exploration of AI and related technologies. I'll share tutorials, insights from projects, book reviews, and occasional thoughts on the industry.</p>
+            
+            <p>My goal is to make complex topics accessible and to create a space where we can learn together. I encourage questions, discussions, and suggestions for future topics.</p>
+            
+            <h2>Looking Ahead</h2>
+            <p>I'm particularly excited about diving deeper into machine learning frameworks and exploring how AI can be used for social good. In my next post, I'll be sharing my experience with building my first neural network.</p>
+            
+            <p>Thank you for joining me on this journey. I look forward to sharing more with you soon!</p>
+        </article>
+   </main>
+   
+   <footer>
+      <a class="back-link" href="../index.html">&#8592; Back to Home</a>
+          <p style="text-align:center; margin-top:30px;">
+            © <span id="year"></span> Abhipsa Srivastava. All rights reserved.
+          </p>
+   </footer>
+</body>
+</html>
