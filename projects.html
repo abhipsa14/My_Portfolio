@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects | Abhipsa Srivastava</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projects by Abhipsa Srivastava – AI/ML Engineer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="images/logo.png" />
+
+  <style>
+    :root {
+      --bg: #212122;
+      --card: #1f1f23;
+      --accent: #7dd3fc;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: 'Patrick Hand', cursive, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1 { font-size: 42px; margin-bottom: 12px; }
+    h2 { font-size: 28px; margin-bottom: 24px; }
+
+    p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 24px;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,15,17,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav ul {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ---------- HEADER ---------- */
+    .page-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .page-header p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ---------- FILTER TABS ---------- */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    /* ---------- PROJECTS GRID ---------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .project-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,.5);
+      border-color: rgba(125, 211, 252, 0.3);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-content {
+      padding: 24px;
+    }
+
+    .project-title {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .project-description {
+      font-size: 16px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(125, 211, 252, 0.1);
+      color: var(--accent);
+      font-size: 13px;
+      border: 1px solid rgba(125, 211, 252, 0.2);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .project-link.primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .project-link.primary:hover {
+      background: #38bdf8;
+      text-decoration: none;
+    }
+
+    .project-link.secondary {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .project-link.secondary:hover {
+      background: rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-links {
+        flex-direction: column;
+      }
+
+      .project-link {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+</nav>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="page-header">
+    <h1>My Projects 🚀</h1>
+    <p>A collection of AI/ML projects, web applications, and data science experiments I've built.</p>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="filter-tabs">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+    <button class="filter-btn" data-filter="web">Web Apps</button>
+    <button class="filter-btn" data-filter="data">Data Science</button>
+  </div>
+
+  <!-- PROJECTS GRID -->
+  <div class="projects-grid">
+
+    <!-- EduBridge -->
+    <div class="project-card" data-category="web ml">
+      <img src="./images/projects/edubridge.png" alt="EduBridge" class="project-image">
+      <div class="project-content">
+        <div class="project-title">EduBridge</div>
+        <p class="project-description">
+          An AI-powered student companion that helps learners find resources, track their daily progress, 
+          and manage their learning journey all on one platform. Built with agentic AI capabilities.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Agentic AI</span>
+          <span class="tag">LLM</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/abhipsa14/AgenticAI_wemakedevs" class="project-link primary">
+            📂 View Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Churn -->
+    <div class="project-card" data-category="ml data">
+      <img src="./images/projects/churn.png" alt="Customer Churn Modelling" class="project-image">
+      <div class="project-content">
+        <div class="project-title">Customer Churn Modelling</div>
+        <p class="project-description">
+          A machine learning model that predicts customer churn to help businesses identify at-risk users 
+          and improve retention strategies. Features interactive visualizations and real-time predictions.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">ML</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/abhipsa14/Churn-Modelling" class="project-link primary">
+            📂 View Code
+          </a>
+          <a href="https://churn-modelling-1410.streamlit.app/" class="project-link secondary">
+            🌐 Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sales Prediction -->
+    <div class="project-card" data-category="ml data">
+      <img src="./images/projects/sales.png" alt="Sales Prediction" class="project-image">
+      <div class="project-content">
+        <div class="project-title">Sales Prediction</div>
+        <p class="project-description">
+          Machine learning model to forecast future sales using historical data. Helps businesses 
+          make data-driven decisions for inventory management and revenue planning.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">Regression</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/abhipsa14/Sales-Prediction-Model/" class="project-link primary">
+            📂 View Code
+          </a>
+          <a href="https://sales-outline.streamlit.app/" class="project-link secondary">
+            🌐 Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Healthcare Dashboard -->
+    <div class="project-card" data-category="data web">
+      <img src="./images/projects/healthcare.png" alt="Healthcare Data Provider Dashboard" class="project-image">
+      <div class="project-content">
+        <div class="project-title">Healthcare Data Provider Dashboard</div>
+        <p class="project-description">
+          A comprehensive system that validates healthcare provider information automatically, 
+          reducing manual work by 70-80% and improving data accuracy significantly.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Data Validation</span>
+          <span class="tag">Healthcare</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/abhipsa14/EY-Techathon" class="project-link primary">
+            📂 View Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mood Recommender -->
+    <div class="project-card" data-category="ml web">
+      <img src="./images/projects/mood.png" alt="Mood Recommender" class="project-image">
+      <div class="project-content">
+        <div class="project-title">MoodBites & Beats</div>
+        <p class="project-description">
+          An emotion-aware recommendation system that suggests food and music based on your current mood. 
+          Uses sentiment analysis to understand user emotions and provide personalized recommendations.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Sentiment Analysis</span>
+          <span class="tag">Next.js</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/abhipsa14/MoodBites-Beats" class="project-link primary">
+            📂 View Code
+          </a>
+          <a href="https://mood-bites-beats.vercel.app/" class="project-link secondary">
+            🌐 Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SmartCity Dashboard -->
+    <div class="project-card" data-category="data web">
+      <img src="./images/projects/smart_city.png" alt="SmartCity Dashboard" class="project-image">
+      <div class="project-content">
+        <div class="project-title">SmartCity Dashboard</div>
+        <p class="project-description">
+          A monitoring dashboard for tracking greenhouse gas emissions in urban areas. 
+          Visualizes environmental data to help cities make informed sustainability decisions.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Data Visualization</span>
+          <span class="tag">Environment</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/abhipsa14/SmartcityDashboard" class="project-link primary">
+            📂 View Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © <span id="year"></span> Built with ❤️ by Abhipsa Srivastava
+</footer>
+
+<script>
+  // Set current year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Project card animation on scroll
+  const projectCards = document.querySelectorAll('.project-card');
+
+  const cardObserver = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, index * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  projectCards.forEach(card => cardObserver.observe(card));
+
+  // Filter functionality
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      cards.forEach(card => {
+        const category = card.dataset.category;
+        
+        if (filter === 'all' || category.includes(filter)) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.classList.add('show');
+          }, 100);
+        } else {
+          card.classList.remove('show');
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
