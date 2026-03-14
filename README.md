@@ -51,50 +51,6 @@ My interests include:
 
 ---
 
-## 📂 Featured Projects
-
-### 🤖 Voice Assistant for Raspberry Pi
-
-A wake-word activated voice assistant running locally on Raspberry Pi using:
-
-* Wake word detection
-* Voice activity detection
-* Retrieval-Augmented Generation (RAG)
-* TinyLlama via Ollama
-
-**Tech:** Python, Ollama, Speech Processing
-
----
-
-### 📊 Flight Customer Prediction
-
-Machine learning model to predict customer behavior for airline services.
-
-**Tech:** Python, Scikit-learn, Pandas
-
----
-
-### 📚 AI Study Assistant (Multi-Agent System)
-
-An intelligent study planner and doubt-solving assistant with:
-
-* Personalized study schedules
-* RAG-based question answering
-* Multi-agent architecture
-
-**Tech:** Python, LLMs, RAG
-
----
-
-## 📈 What I'm Currently Learning
-
-* Advanced Data Engineering
-* LLM Systems & Agents
-* Distributed Systems
-* AI on Edge Devices
-
----
-
 ## 📫 Connect With Me
 
 * GitHub: https://github.com/abhipsa14
