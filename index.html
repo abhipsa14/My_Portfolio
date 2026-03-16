@@ -212,123 +212,17 @@
       border-radius: 16px;
       border: 1px solid var(--border);
     }
-
-    /* ---------- TIMELINE ---------- */
-    .timeline {
-      position: relative;
-      padding: 20px 0;
+   /* ---------- EXPERIENCE ---------- */
+    .ex-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 3px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--accent), rgba(125, 211, 252, 0.2));
-      border-radius: 3px;
-    }
-
-    .timeline-item {
-      position: relative;
-      width: 50%;
-      padding: 20px 40px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-
-    .timeline-item.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .timeline-item:nth-child(odd) {
-      left: 0;
-      text-align: right;
-      padding-right: 60px;
-    }
-
-    .timeline-item:nth-child(even) {
-      left: 50%;
-      text-align: left;
-      padding-left: 60px;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      background: var(--bg);
-      border: 3px solid var(--accent);
-      border-radius: 50%;
-      top: 30px;
-      z-index: 1;
-      transition: all 0.3s ease;
-    }
-
-    .timeline-item:nth-child(odd)::before {
-      right: -9px;
-    }
-
-    .timeline-item:nth-child(even)::before {
-      left: -9px;
-    }
-
-    .timeline-item:hover::before {
-      background: var(--accent);
-      box-shadow: 0 0 20px var(--accent);
-    }
-
-    .timeline-date {
-      display: inline-block;
-      padding: 6px 14px;
-      background: linear-gradient(135deg, var(--accent), #38bdf8);
-      color: var(--bg);
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .timeline-title {
-      font-size: 20px;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-
-    .timeline-item p {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 768px) {
-      .timeline::before {
-        left: 20px;
-      }
-
-      .timeline-item {
-        width: 100%;
-        padding-left: 60px;
-        padding-right: 20px;
-        text-align: left;
-      }
-
-      .timeline-item:nth-child(odd),
-      .timeline-item:nth-child(even) {
-        left: 0;
-        text-align: left;
-        padding-left: 60px;
-        padding-right: 20px;
-      }
-
-      .timeline-item:nth-child(odd)::before,
-      .timeline-item:nth-child(even)::before {
-        left: 11px;
-        right: auto;
-      }
+    .ex-box {
+      background: var(--card);
+      padding: 22px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
     }
 
     /* ---------- FOOTER ---------- */
@@ -352,10 +246,10 @@
 
 <body>
 
-<nav>
+<nav style="background:url(https://unsplash.com/photos/photo-of-outer-space-Q1p7bh3SHj8);">
   <ul>
     <li><a href="#hero">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="data/Abhipsa-bio.txt">About</a></li>
     <li><a href="#tools">Skills</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -369,25 +263,11 @@
     <h1>Hi, I'm Abhipsa 👋</h1>
 
     <p>
-      I’m an aspiring AI/ML engineer from India, working towards building impactful AI solutions
-      through research, community learning, and hands-on experimentation.
+      I'm a 21 year old self-taught AI/ML enthusiast and curious soul.<br>
+      I love building and learning about and around AI.
     </p>
-
-    <p>
-      I’ve participated in 15+ hackathons and ideathons. 
-      Beyond competitions, I’ve built end-to-end projects, led college clubs,
-      and mentored juniors while sharing my journey through <strong>#BuildInPublic</strong>.
-    </p>
-    <p>I have been contributing to open source projects and writing technical blogs to share knowledge.</p>
-
-    <p>
-      When I’m not coding or exploring research ideas, I enjoy reading,
-      listening to music, and painting.
-    </p>
-
-    <p style="color:var(--accent);">
-      Machine Learning • Data Science • Research-driven Development
-    </p>
+    <p>And little more curious in Research and Statistical Analysis.</p>
+  
 
     <div class="hero-links">
       <a href="mailto:abhipsasri8183@gmail.com">Email</a>
@@ -399,7 +279,7 @@
     </div>
   </div>
 
-  <div style="text-align:right;">
+  <div style="border-radius: 2px;">
     <img src="images/profile-1.jpg" alt="Abhipsa Srivastava">
   </div>
 </section>
@@ -428,6 +308,7 @@
     <div class="tool-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">MySQL</div>
     <div class="tool-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg">PostgreSQL</div>
     <div class="tool-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">MongoDB</div>
+    <div class="tool-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ollama/ollama-original.svg">Ollama</div>
   </div>
 </section>
 
@@ -481,41 +362,36 @@
   </div>
   <a href="projects.html" class="view-more-btn">View All Projects →</a>
 </section>
-<section id="experience">
+<section id="ex">
   <h2>Experience</h2>
 
-  <div class="timeline">
+  <div class="ex-container">
     
 
-    <div class="timeline-item">
-      <span class="timeline-date">Dec 2024 - Jan 2025</span>
-      <div class="timeline-title">❄️ Winter Intern @ IIIT Allahabad</div>
+    <div class="ex-box">
+      <span class="ex-date">Dec 2024 - Jan 2025</span>
+      <div class="ex-title">❄️ Winter Intern @ IIIT Allahabad</div>
       <p>Modeled 5G Network Slicing techniques, focusing on QoS parameters and Resource Allocation strategies.</p>
     </div>
 
-    <div class="timeline-item">
-      <span class="timeline-date">June 2024 - June 2025</span>
-      <div class="timeline-title">📝 Report Writer @ WikiClub Tech</div>
+    <div class="ex-box">
+      <span class="ex-date">June 2024 - June 2025</span>
+      <div class="ex-title">📝 Report Writer @ WikiClub Tech</div>
       <p>Structured technical reports, improving documentation efficiency by 60%.</p>
     </div>
-    <div class="timeline-item">
-      <span class="timeline-date">July 2025 - Dec 2025</span>
-      <div class="timeline-title">🤖 AI Intern @ ZenithIndia</div>
+    <div class="ex-box">
+      <span class="ex-date">July 2025 - Dec 2025</span>
+      <div class="ex-title">🤖 AI Intern @ ZenithIndia</div>
       <p>Worked on fashion trend analysis "TrendWeave" to predict future trends using LSTM with 87% accuracy.</p>
     </div>
   </div>
 
 </section>
 <!-- BLOG -->
-<section id="blog">
-  <h2>Blog</h2>
-  <div class="blog-box">
-    <p>I write about AI, ML experiments, and research ideas. </p> 
-    👉 <a href="https://abhipsa-blog.vercel.app/">Visit my blog 😉</a>
-  </div>
-</section>
+
 
 <footer>
+   <p>Read my blogs: <a href="https://abhipsa-blog.vercel.app/">Blogs😉</a></p>
   © <span id="year"></span> Built with ❤️ by Abhipsa Srivastava
 </footer>
 

@@ -17,7 +17,7 @@
     :root {
       --bg: #212122;
       --card: #1f1f23;
-      --accent: #7dd3fc;
+      --accent: #7da9fc;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --border: rgba(255,255,255,0.08);
@@ -263,24 +263,16 @@
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
   </ul>
 </nav>
 <div class="container">
 
   <!-- HEADER -->
   <div class="page-header">
-    <h1>My Projects 🚀</h1>
-    <p>A collection of AI/ML projects, web applications, and data science experiments I've built.</p>
+    <h1>Projects</h1>
+    <p>Collection of AI/ML projects, Data Science initiatives, Statistical Analysis works.</p>
   </div>
 
-  <!-- FILTER TABS -->
-  <div class="filter-tabs">
-    <button class="filter-btn active" data-filter="all">All Projects</button>
-    <button class="filter-btn" data-filter="ml">Machine Learning</button>
-    <button class="filter-btn" data-filter="web">Web Apps</button>
-    <button class="filter-btn" data-filter="data">Data Science</button>
-  </div>
 
   <!-- PROJECTS GRID -->
   <div class="projects-grid">
@@ -301,7 +293,7 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/abhipsa14/AgenticAI_wemakedevs" class="project-link primary">
-            📂 View Code
+            Code
           </a>
         </div>
       </div>
@@ -324,10 +316,10 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/abhipsa14/Churn-Modelling" class="project-link primary">
-            📂 View Code
+          Code
           </a>
           <a href="https://churn-modelling-1410.streamlit.app/" class="project-link secondary">
-            🌐 Live Demo
+          Live
           </a>
         </div>
       </div>
@@ -350,10 +342,10 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/abhipsa14/Sales-Prediction-Model/" class="project-link primary">
-            📂 View Code
+            Code
           </a>
           <a href="https://sales-outline.streamlit.app/" class="project-link secondary">
-            🌐 Live Demo
+            Live 
           </a>
         </div>
       </div>
@@ -375,7 +367,7 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/abhipsa14/EY-Techathon" class="project-link primary">
-            📂 View Code
+            Code
           </a>
         </div>
       </div>
@@ -398,10 +390,10 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/abhipsa14/MoodBites-Beats" class="project-link primary">
-            📂 View Code
+            Code
           </a>
           <a href="https://mood-bites-beats.vercel.app/" class="project-link secondary">
-            🌐 Live Demo
+            Live
           </a>
         </div>
       </div>
@@ -423,7 +415,7 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/abhipsa14/SmartcityDashboard" class="project-link primary">
-            📂 View Code
+            Code
           </a>
         </div>
       </div>
@@ -456,35 +448,7 @@
 
   projectCards.forEach(card => cardObserver.observe(card));
 
-  // Filter functionality
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Update active button
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.dataset.filter;
-
-      cards.forEach(card => {
-        const category = card.dataset.category;
-        
-        if (filter === 'all' || category.includes(filter)) {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.classList.add('show');
-          }, 100);
-        } else {
-          card.classList.remove('show');
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
-        }
-      });
-    });
-  });
+  
 </script>
 
 </body>
